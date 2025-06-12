@@ -22,8 +22,12 @@ const App = () => {
         </button>
       </div>
 
-
- 
+      {/* Weather Information Section */}
+      <div className="weather-container">
+        <div className="current-weather">
+          <img src="src/assets/cloudy.png" alt="cloudy" className="weather-icon" width={"5%"} height={"auto"} />
+        </div>
+      </div>
 
     </div>
 
