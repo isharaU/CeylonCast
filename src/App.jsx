@@ -12,7 +12,7 @@ const App = () => {
             search
           </span>
           <input type='search' className='search-input' placeholder='Enter a City Name'/> 
-          <button type='submit' className='search-button'>Search</button>
+          
         </form>
 
         <button className='location-button'>
