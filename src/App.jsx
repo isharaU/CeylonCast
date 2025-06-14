@@ -5,12 +5,10 @@ import Search from './components/Search';
 const App = () => {
   return (
     <div className="container">
-
-      {/* Search Section */}
-      <Search/>
       
-      {/* Weather Information Section */}
+      <Search/>
       <div className="weather-container">
+
         <div className="current-weather">
           <img src="src/assets/cloudy.png" alt="cloudy" className="weather-icon" width={"5%"} height={"auto"} />
           <h2 className="temperature">25°C</h2>
@@ -33,6 +31,7 @@ const App = () => {
             {/* Add more hourly items as needed */}
           </ul>
         </div>
+
       </div>
 
     </div>
