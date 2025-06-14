@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from './components/Search';
 
 
 const App = () => {
@@ -6,22 +7,8 @@ const App = () => {
     <div className="container">
 
       {/* Search Section */}
-      <div className='search-container'>
-        <form action="" className="search-form">
-          <span className="material-symbols-outlined">
-            search
-          </span>
-          <input type='search' className='search-input' placeholder='Enter a City Name'/> 
-          
-        </form>
-
-        <button className='location-button'>
-          <span className="material-symbols-outlined">
-            my_location
-          </span>
-        </button>
-      </div>
-
+      <Search/>
+      
       {/* Weather Information Section */}
       <div className="weather-container">
         <div className="current-weather">
