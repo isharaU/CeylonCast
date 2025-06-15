@@ -1,10 +1,15 @@
 import React from "react";
 
 const Search = () => {
+    const handleCitySearch = (e) => {
+        e.preventDefault();
+        const searchInput = e.target.querySelector('.search-input');
+        console.log("Searching for city:", searchInput.value);
+    }
   return (
     <div>
          <div className='search-container'>
-        <form action="" className="search-form">
+        <form action="" className="search-form" onSubmit={handleCitySearch}>
           <span className="material-symbols-outlined">
             search
           </span>
