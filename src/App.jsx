@@ -5,7 +5,7 @@ import HourlyForecast from './components/HourlyForecast';
 import { filterHourlyForecast, formatHourlyForecast } from './utils/weatherService';
 
 const App = () => {
-  const [currentWeather, setCurrentWeather] = useState(null);
+  const [currentWeather, setCurrentWeather] = useState([]);
   const [hourlyForecast, setHourlyForecast] = useState([]);
 
   const getWeatherDetails = async (API_URL) => {
