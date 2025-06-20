@@ -1,40 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Search from './components/Search';
 import CurrentWeather from './components/CurrentWeather';
 import HourlyForecast from './components/HourlyForecast';
-import { filterHourlyForecast, formatHourlyForecast , formatCurrentWeather  } from './utils/weatherService';
+import { useWeather } from './hooks/useWeather';
 
 const App = () => {
-  const [currentWeather, setCurrentWeather] = useState([]);
-  const [hourlyForecast, setHourlyForecast] = useState([]);
-  
-  const getWeatherDetails = async (API_URL) => {
-    try {
-      const response = await fetch(API_URL);
-      if (!response.ok) throw new Error("Network response was not ok");
-
-      const data = await response.json();
-
-      // Set current weather
-      const currentWeatherData = formatCurrentWeather(data);
-      setCurrentWeather(currentWeatherData);
-
-      // Process hourly forecast
-      const allHours = formatHourlyForecast(data.forecast.forecastday);
-      const next24HoursForecast = filterHourlyForecast(allHours);
-      setHourlyForecast(next24HoursForecast);
-
-    } catch (error) {
-      console.error("Error fetching weather data:", error);
-    }
-  };
+  const { currentWeather, hourlyForecast, getWeatherDetails } = useWeather();
 
   return (
     <div className="container">
       <Search getWeatherDetails={getWeatherDetails} />
+      
       <div className="weather-container">
         <CurrentWeather weather={currentWeather} />
       </div>
+
       <div className="hourly-forecast-container overflow-x-auto flex space-x-4 p-4">
         {hourlyForecast.length > 0 ? (
           hourlyForecast.map((hour, index) => (
