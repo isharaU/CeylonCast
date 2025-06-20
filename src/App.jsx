@@ -1,29 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Search from './components/Search';
 import CurrentWeather from './components/CurrentWeather';
 import HourlyForecast from './components/HourlyForecast';
+import { useWeather } from './hooks/useWeather';
+import NoResults from './components/NoResults';
 
 const App = () => {
-  const getWeatherDetails = async (API_URL) => {
-    try {
-      const response = await fetch(API_URL);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data = await response.json();
-      console.log("Weather data:", data);
-    } catch (error) {
-      console.error("Error fetching weather data:", error);
-    }
-  };
+  const { currentWeather, hourlyForecast, hasNoResults, getWeatherDetails } = useWeather();
 
   return (
     <div className="container">
-      <Search getWeatherDetails={getWeatherDetails} /> {/* ✅ Fixed this line */}
-      <div className="weather-container">
-        <CurrentWeather />
-        <HourlyForecast />
-      </div>
+      <Search getWeatherDetails={getWeatherDetails} />
+      
+      {hasNoResults ? (
+        <NoResults />
+      ) : (
+      <>
+        <div className="weather-container">
+          <CurrentWeather weather={currentWeather} />
+        </div>
+
+        <div className="hourly-forecast-container overflow-x-auto flex space-x-4 p-4">
+          {hourlyForecast.length > 0 ? (
+            hourlyForecast.map((hour, index) => (
+              <HourlyForecast key={index} hour={hour} />
+            ))
+          ) : (
+            <p>No hourly forecast available.</p>
+          )}
+        </div>
+      </>
+      )}
     </div>
   );
 };
