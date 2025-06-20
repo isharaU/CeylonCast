@@ -17,7 +17,7 @@ const Search = ({ getWeatherDetails }) => {
                 getWeatherDetails(API_URL);
             });
         } else {
-            alert("Geolocation is not supported by this browser.");
+            alert("Location access denied.");
         }
     };
   return (
