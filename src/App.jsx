@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Search from './components/Search';
 import CurrentWeather from './components/CurrentWeather';
 import HourlyForecast from './components/HourlyForecast';
-import { filterHourlyForecast, formatHourlyForecast } from './utils/weatherService';
+import { filterHourlyForecast, formatHourlyForecast , formatCurrentWeather  } from './utils/weatherService';
 
 const App = () => {
   const [currentWeather, setCurrentWeather] = useState([]);
   const [hourlyForecast, setHourlyForecast] = useState([]);
-
+  
   const getWeatherDetails = async (API_URL) => {
     try {
       const response = await fetch(API_URL);
@@ -16,16 +16,8 @@ const App = () => {
       const data = await response.json();
 
       // Set current weather
-      const { temp_c, condition } = data.current;
-      const { name: city, country } = data.location;
-
-      setCurrentWeather({
-        temperature: temp_c,
-        description: condition.text,
-        icon: condition.icon,
-        city,
-        country
-      });
+      const currentWeatherData = formatCurrentWeather(data);
+      setCurrentWeather(currentWeatherData);
 
       // Process hourly forecast
       const allHours = formatHourlyForecast(data.forecast.forecastday);

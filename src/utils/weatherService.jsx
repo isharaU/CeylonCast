@@ -16,3 +16,16 @@ export const formatHourlyForecast = (forecastday) =>
       icon: hour.condition.icon
     }))
   );
+
+  export const formatCurrentWeather = (data) => {
+  const { temp_c, condition } = data.current;
+  const { name: city, country } = data.location;
+
+  return {
+    temperature: temp_c,
+    description: condition.text,
+    icon: condition.icon,
+    city,
+    country
+  };
+};
