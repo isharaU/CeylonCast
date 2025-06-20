@@ -1,21 +1,15 @@
 import React from 'react';
 import cloudyIcon from '../assets/cloudy.png';
 
-const HourlyForecast = () => {
+const HourlyForecast = ({ hour }) => {
   return (
-    <div className="hourly-forcast">
+    <div className="hourly-forecast">
       <ul className="hourly-list">
         <li className="hourly-item">
-          <span className="hour">12:00 PM</span>
-          <img src={cloudyIcon} alt="cloudy" className="hourly-icon" width={"20%"} height={"auto"} />
-          <span className="hourly-temp">28°C</span>
+          <span className="hour">{hour.time}</span>
+          <img src={hour.icon} alt={hour.description} className="hourly-icon" width={"20%"} height={"auto"} />
+          <span className="hourly-temp">{hour.temperature}°C</span>
         </li>
-        <li className="hourly-item">
-          <span className="hour">1:00 PM</span>
-          <img src={cloudyIcon} alt="cloudy" className="hourly-icon" width={"20%"} height={"auto"} />
-          <span className="hourly-temp">30°C</span>
-        </li>
-        {/* You can map this later from props or state */}
       </ul>
     </div>
   );

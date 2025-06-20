@@ -60,7 +60,15 @@ const App = () => {
       <Search getWeatherDetails={getWeatherDetails} />
       <div className="weather-container">
         <CurrentWeather weather={currentWeather} />
-        <HourlyForecast forecast={hourlyForecast} />
+      </div>
+      <div className="hourly-forecast-container">
+        {hourlyForecast.length > 0 ? (
+          hourlyForecast.map((hour, index) => (
+            <HourlyForecast key={index} hour={hour} />
+          ))
+        ) : (
+          <p>No hourly forecast available.</p>
+        )}
       </div>
     </div>
   );

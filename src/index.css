@@ -146,4 +146,15 @@ body {
   font-weight: 500;
 }
 
+.hourly-forecast-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.hourly-forecast-container::-webkit-scrollbar {
+  display: none; 
+}
 
