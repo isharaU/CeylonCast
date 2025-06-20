@@ -99,8 +99,11 @@ body {
   color: #666;
 }
 
+ /* Hourly Forecast Section */
+
 .hourly-forecast {
   margin-top: 30px;
+  text-align: center;
 }
 
 .hourly-list {
@@ -125,6 +128,7 @@ body {
 
 .hourly-item:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .hourly-icon {
@@ -152,6 +156,14 @@ body {
 }
 
 .hourly-forecast-container::-webkit-scrollbar {
-  display: none; 
+  display: none; /* Hide scrollbar for a cleaner look */
+}
+
+.hourly-item {
+  scroll-snap-align: start;
+  flex: 0 0 auto; /* Prevents items from shrinking */
+  width: 120px; /* Fixed width for each item */
+  text-align: center;
+  transition: transform 0.2s ease;
 }
 
