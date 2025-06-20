@@ -9,6 +9,17 @@ const Search = ({ getWeatherDetails }) => {
 
         getWeatherDetails(API_URL);
     }
+    const handleLocationClick = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const { latitude, longitude } = position.coords;
+                const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${latitude},${longitude}`;
+                getWeatherDetails(API_URL);
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    };
   return (
     <div>
          <div className='search-container'>
@@ -16,11 +27,11 @@ const Search = ({ getWeatherDetails }) => {
           <span className="material-symbols-outlined">
             search
           </span>
-          <input type='search' className='search-input' placeholder='Enter a City Name'/> 
+          <input type='search' className='search-input' placeholder='Search for city...' /> 
         </form>
-        <button className='location-button'>
+        <button className='location-button' onClick={handleLocationClick}>
           <span className="material-symbols-outlined">
-            my_location
+            home
           </span>
         </button>
       </div>
