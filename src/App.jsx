@@ -3,6 +3,7 @@ import Search from './components/Search';
 import CurrentWeather from './components/CurrentWeather';
 import HourlyForecast from './components/HourlyForecast';
 import { useWeather } from './hooks/useWeather';
+import NoResults from './components/NoResults';
 
 const App = () => {
   const { currentWeather, hourlyForecast, hasNoResults, getWeatherDetails } = useWeather();
@@ -12,10 +13,8 @@ const App = () => {
       <Search getWeatherDetails={getWeatherDetails} />
       
       {hasNoResults ? (
-        <div className="no-results">
-          <p>No results found. Please try a different search.</p>
-        </div>
-      ):(
+        <NoResults />
+      ) : (
       <>
         <div className="weather-container">
           <CurrentWeather weather={currentWeather} />
