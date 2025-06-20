@@ -1,43 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Search = ({ getWeatherDetails }) => {
-    const API_KEY = import.meta.env.VITE_API_KEY; 
-    const URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=`;
+  const [searchText, setSearchText] = useState("");
 
-    const handleCitySearch = (e) => {
-        e.preventDefault();
-        const searchInput = e.target.querySelector('.search-input');
-        const API_URL = `${URL}${searchInput.value}`;
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  const BASE_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=`;
+
+  const handleCitySearch = (e) => {
+    e.preventDefault();
+    if (!searchText.trim()) return;
+
+    const API_URL = `${BASE_URL}${searchText}`;
+    getWeatherDetails(API_URL);
+  };
+
+  const handleLocationClick = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        const API_URL = `${BASE_URL}${latitude},${longitude}`;
         getWeatherDetails(API_URL);
+        setSearchText(`${latitude},${longitude}`); // optional: show lat/long
+      });
+    } else {
+      alert("Location access denied.");
     }
+  };
 
-    const handleLocationClick = () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                const { latitude, longitude } = position.coords;
-                const API_URL = `${URL}${latitude},${longitude}`;
-                getWeatherDetails(API_URL);
-            });
-        } else {
-            alert("Location access denied.");
-        }
-    };
-    
   return (
-    <div>
-         <div className='search-container'>
-        <form action="" className="search-form" onSubmit={handleCitySearch}>
-          <span className="material-symbols-outlined">
-            search
-          </span>
-          <input type='search' className='search-input' placeholder='Search for city...' /> 
-        </form>
-        <button className='location-button' onClick={handleLocationClick}>
-          <span className="material-symbols-outlined">
-            home
-          </span>
-        </button>
-      </div>
+    <div className="search-container">
+      <form className="search-form" onSubmit={handleCitySearch}>
+        <span className="material-symbols-outlined">search</span>
+        <input
+          type="search"
+          className="search-input"
+          placeholder="Search for city..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+      </form>
+
+      <button className="location-button" onClick={handleLocationClick}>
+        <span className="material-symbols-outlined">home</span>
+      </button>
     </div>
   );
 };

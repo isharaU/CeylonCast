@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { parseWeatherData } from '../utils/weatherService';
 
 export const useWeather = () => {
-  const [currentWeather, setCurrentWeather] = useState(null);
+  const [currentWeather, setCurrentWeather] = useState({});
   const [hourlyForecast, setHourlyForecast] = useState([]);
 
   const getWeatherDetails = async (API_URL) => {
