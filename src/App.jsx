@@ -2,19 +2,11 @@ import React, { useState } from 'react';
 import Search from './components/Search';
 import CurrentWeather from './components/CurrentWeather';
 import HourlyForecast from './components/HourlyForecast';
+import { filterHourlyForecast, formatHourlyForecast } from './utils/weatherService';
 
 const App = () => {
-  const [currentWeather, setCurrentWeather] = useState([]);
+  const [currentWeather, setCurrentWeather] = useState(null);
   const [hourlyForecast, setHourlyForecast] = useState([]);
-
-  const filterHourlyForecast = (forecast) => {
-    const now = new Date();
-    const next24h = new Date(now.getTime() + 24 * 60 * 60 * 1000);
-    return forecast.filter((hour) => {
-      const hourDate = new Date(hour.time);
-      return hourDate >= now && hourDate <= next24h;
-    });
-  };
 
   const getWeatherDetails = async (API_URL) => {
     try {
@@ -23,33 +15,23 @@ const App = () => {
 
       const data = await response.json();
 
-      const temperature = data.current.temp_c;
-      const description = data.current.condition.text;
-      const icon = data.current.condition.icon;
-      const city = data.location.name;
-      const country = data.location.country;
+      // Set current weather
+      const { temp_c, condition } = data.current;
+      const { name: city, country } = data.location;
 
       setCurrentWeather({
-        temperature,
-        description,
-        icon,
+        temperature: temp_c,
+        description: condition.text,
+        icon: condition.icon,
         city,
         country
       });
 
-      const rawHourlyForecast = data.forecast.forecastday.flatMap(day =>
-        day.hour.map(hour => ({
-          time: hour.time,
-          temperature: hour.temp_c,
-          description: hour.condition.text,
-          icon: hour.condition.icon
-        }))
-      );
-
-      const next24HoursForecast = filterHourlyForecast(rawHourlyForecast);
+      // Process hourly forecast
+      const allHours = formatHourlyForecast(data.forecast.forecastday);
+      const next24HoursForecast = filterHourlyForecast(allHours);
       setHourlyForecast(next24HoursForecast);
-      console.log("Hourly Forecast:", next24HoursForecast);
-      
+
     } catch (error) {
       console.error("Error fetching weather data:", error);
     }
@@ -61,7 +43,7 @@ const App = () => {
       <div className="weather-container">
         <CurrentWeather weather={currentWeather} />
       </div>
-      <div className="hourly-forecast-container">
+      <div className="hourly-forecast-container overflow-x-auto flex space-x-4 p-4">
         {hourlyForecast.length > 0 ? (
           hourlyForecast.map((hour, index) => (
             <HourlyForecast key={index} hour={hour} />
