@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Search = ({ getWeatherDetails }) => {
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState("Colombo");
 
   const API_KEY = import.meta.env.VITE_API_KEY;
   const BASE_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=`;
