@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { parseWeatherData } from '../utils/weatherService';
 
 export const useWeather = () => {
@@ -22,6 +22,12 @@ export const useWeather = () => {
       console.error("Error fetching weather data:", error);
     }
   };
+
+  useEffect(() => {
+    const API_KEY = import.meta.env.VITE_API_KEY;
+    const defaultURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=Colombo`;
+    getWeatherDetails(defaultURL);
+  }, []);
 
   return { currentWeather, hourlyForecast, getWeatherDetails, hasNoResults };
 };
