@@ -2,24 +2,27 @@ import React from "react";
 
 const Search = ({ getWeatherDetails }) => {
     const API_KEY = import.meta.env.VITE_API_KEY; 
+    const URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=`;
+
     const handleCitySearch = (e) => {
         e.preventDefault();
         const searchInput = e.target.querySelector('.search-input');
-        const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${searchInput.value}`;
-
+        const API_URL = `${URL}${searchInput.value}`;
         getWeatherDetails(API_URL);
     }
+
     const handleLocationClick = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 const { latitude, longitude } = position.coords;
-                const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${latitude},${longitude}`;
+                const API_URL = `${URL}${latitude},${longitude}`;
                 getWeatherDetails(API_URL);
             });
         } else {
             alert("Location access denied.");
         }
     };
+    
   return (
     <div>
          <div className='search-container'>
