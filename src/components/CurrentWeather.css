@@ -1,0 +1,25 @@
+.weather-container {
+  text-align: center;
+}
+
+.weather-icon {
+  width: 80px;
+  height: auto;
+}
+
+.temperature {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.weather-description {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.location {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+}

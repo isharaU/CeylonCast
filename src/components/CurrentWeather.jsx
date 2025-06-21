@@ -1,4 +1,4 @@
-import React from 'react';
+import './CurrentWeather.css';
 
 const CurrentWeather = ({ weather }) => {
   if (!weather) {
