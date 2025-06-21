@@ -10,7 +10,7 @@ export const parseWeatherData = (data) => {
     country
   };
 
-  const hourlyForecast = data.forecast?.forecastday
+  const allHours = data.forecast?.forecastday
     ? data.forecast.forecastday.flatMap(day =>
         day.hour.map(hour => ({
           time: hour.time,
@@ -21,6 +21,11 @@ export const parseWeatherData = (data) => {
       )
     : [];
 
-  return { currentWeather, hourlyForecast };
-};
+  const filteredHours = allHours.filter(hour => {
+    const hourDate = new Date(hour.time);
+    const hourValue = hourDate.getHours();
+    return hourValue % 3 === 0;
+  });
 
+  return { currentWeather, hourlyForecast: filteredHours };
+};
