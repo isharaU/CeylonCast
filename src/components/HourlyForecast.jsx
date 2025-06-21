@@ -1,6 +1,3 @@
-import React from 'react';
-import cloudyIcon from '../assets/cloudy.png';
-
 const HourlyForecast = ({ hour }) => {
   return (
     <div className="hourly-forecast">
