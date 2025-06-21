@@ -1,5 +1,6 @@
 const OtherWeatherData = ({ weather }) => {
   if (!weather) {
+    console.log("Weather data is not available yet.");
     return <div>Loading...</div>;
   }
 

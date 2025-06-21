@@ -15,7 +15,6 @@ export const useWeather = () => {
 
       const data = await response.json();
       const { currentWeather, hourlyForecast, otherWeatherData } = parseWeatherData(data);
-      console.log(data);
 
       setCurrentWeather(currentWeather);
       setHourlyForecast(hourlyForecast);
