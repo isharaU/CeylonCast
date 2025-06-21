@@ -1,48 +1,63 @@
 .current-weather-card {
-  background-color: #f0f8ff;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
   text-align: center;
-  transition: transform 0.3s ease;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  border: none; /* removes boxy feel */
+  border-radius: 0; /* no corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: transparent; /* no background */
 }
 
 .current-weather-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 119, 182, 0.08); /* soft focus shadow only on hover */
 }
 
 .weather-icon {
-  width: 90px;
+  width: 120px;
   height: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 119, 182, 0.2));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.current-weather-card:hover .weather-icon {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 12px rgba(0, 119, 182, 0.3));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 .temperature {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
-  color: #0077b6;
+  color: #023e8a;
   margin: 0.5rem 0;
+  letter-spacing: -1px;
 }
 
 .weather-description {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  color: #444;
+  color: #333;
   margin-bottom: 0.5rem;
   text-transform: capitalize;
 }
 
 .location {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #555;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .loading-text {
   text-align: center;
   font-size: 1.2rem;
-  color: #888;
+  color: #999;
+  font-style: italic;
 }
