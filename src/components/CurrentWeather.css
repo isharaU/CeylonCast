@@ -1,25 +1,48 @@
-.weather-container {
+.current-weather-card {
+  background-color: #f0f8ff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
+  transition: transform 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.current-weather-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .weather-icon {
-  width: 80px;
+  width: 90px;
   height: auto;
+  margin-bottom: 1rem;
 }
 
 .temperature {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  margin: 10px 0;
+  color: #0077b6;
+  margin: 0.5rem 0;
 }
 
 .weather-description {
-  font-size: 1.2rem;
-  color: #555;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
 }
 
 .location {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #666;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
 }
