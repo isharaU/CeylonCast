@@ -1,3 +1,5 @@
+import React from "react";
+
 const OtherWeatherData = ({ weather }) => {
   if (!weather) {
     console.log("Weather data is not available yet.");
@@ -6,15 +8,35 @@ const OtherWeatherData = ({ weather }) => {
 
   return (
     <div className="other-weather-data">
-      <h2 className="other-weather-title">Other Weather Data</h2>
       <ul className="other-weather-list">
-        <li>Humidity: {weather.humidity}%</li>
-        <li>Pressure: {weather.pressure_mb} hPa</li>
-        <li>Wind Speed: {weather.wind_kph} km/h {weather.wind_dir}</li>
-        <li>UV Index: {weather.uv}</li>
-        <li>Visibility: {weather.vis_km} km</li>
-        <li>Feels Like: {weather.feelslike_c}°C</li>
-        <li>Precipitation: {weather.precip_mm} mm</li>
+        <li className="other-weather-item">
+          <span className="label">Humidity</span>
+          <span className="value">{weather.humidity}%</span>
+        </li>
+        <li className="other-weather-item">
+          <span className="label">Pressure</span>
+          <span className="value">{weather.pressure_mb} hPa</span>
+        </li>
+        <li className="other-weather-item">
+          <span className="label">Wind Speed</span>
+          <span className="value">{weather.wind_kph} km/h {weather.wind_dir}</span>
+        </li>
+        <li className="other-weather-item">
+          <span className="label">UV Index</span>
+          <span className="value">{weather.uv}</span>
+        </li>
+        <li className="other-weather-item">
+          <span className="label">Visibility</span>
+          <span className="value">{weather.vis_km} km</span>
+        </li>
+        <li className="other-weather-item">
+          <span className="label">Feels Like</span>
+          <span className="value">{weather.feelslike_c}°C</span>
+        </li>
+        <li className="other-weather-item">
+          <span className="label">Precipitation</span>
+          <span className="value">{weather.precip_mm} mm</span>
+        </li>
       </ul>
     </div>
   );
