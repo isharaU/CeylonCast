@@ -15,7 +15,8 @@ export const parseWeatherData = (data) => {
     uv: data.current.uv,
     vis_km: data.current.vis_km,
     feelslike_c: data.current.feelslike_c,
-    precip_mm: data.current.precip_mm
+    precip_mm: data.current.precip_mm,
+    cloud: data.current.cloud
   };
 
   const allHours = data.forecast?.forecastday

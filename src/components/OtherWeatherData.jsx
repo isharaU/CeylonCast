@@ -37,6 +37,10 @@ const OtherWeatherData = ({ weather }) => {
           <span className="label">Precipitation</span>
           <span className="value">{weather.precip_mm} mm</span>
         </li>
+        <li className="other-weather-item">
+          <span className="label">Cloud</span>
+          <span className="value">{weather.cloud}</span>
+        </li>
       </ul>
     </div>
   );
