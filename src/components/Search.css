@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 30px;
 }
 
@@ -10,15 +10,23 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #f5f5f5;
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  transition: border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.65);
+  border: 2px solid rgba(0, 119, 255, 0.2);
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-form:focus-within {
   border-color: #0077ff;
+  box-shadow: 0 4px 15px rgba(0, 119, 255, 0.2);
+}
+
+.search-icon {
+  font-size: 22px;
+  color: #0077ff;
 }
 
 .search-input {
@@ -26,19 +34,34 @@
   outline: none;
   background: transparent;
   font-size: 1rem;
-  width: 200px;
+  width: 220px;
+  color: #333;
+  padding: 4px 0;
+}
+
+.search-input::placeholder {
+  color: #888;
 }
 
 .location-button {
   border: none;
-  background-color: #0077ff;
+  background: linear-gradient(to right, #0077ff, #3399ff);
   color: white;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 12px 14px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 119, 255, 0.2);
 }
 
 .location-button:hover {
-  background-color: #005fd1;
+  transform: scale(1.1);
+  box-shadow: 0 5px 12px rgba(0, 119, 255, 0.3);
+}
+
+.material-symbols-outlined {
+  font-size: 20px;
 }
