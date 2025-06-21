@@ -11,6 +11,11 @@ const App = () => {
 
   return (
     <div className="container">
+      <div className="app-header">
+        <span className="logo-icon"><img src="./src/assets/cloudy.png" alt="CeylonCast Logo" /></span>
+        <h1 className="app-title">CeylonCast</h1>
+    </div>
+
       <Search getWeatherDetails={getWeatherDetails} />
       
       {hasNoResults ? (
