@@ -20,6 +20,10 @@ const App = () => {
           <CurrentWeather weather={currentWeather} />
         </div>
 
+        <div className="other-weather-info">
+          {/* <CurrentWeather weather={currentWeather} /> */}
+        </div>
+
         <div className="hourly-forecast-container overflow-x-auto flex space-x-4 p-4">
           {hourlyForecast.length > 0 ? (
             hourlyForecast.map((hour, index) => (
