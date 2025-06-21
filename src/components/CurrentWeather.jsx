@@ -1,19 +1,17 @@
-import React from 'react';
+import './CurrentWeather.css';
 
 const CurrentWeather = ({ weather }) => {
   if (!weather) {
-    return <p>Loading current weather...</p>; // fallback for first load
+    return <p className="loading-text">Loading current weather...</p>;
   }
 
   return (
-    <div className="current-weather">
+    <div className="current-weather-card">
       <img 
         src={weather.icon} 
         alt={weather.description} 
         className="weather-icon" 
-        width="5%" 
-        height="auto" 
-      />
+      />  
       <h2 className="temperature">{weather.temperature}°C</h2>
       <p className="weather-description">{weather.description}</p>
       <p className="location">{weather.city}, {weather.country}</p>

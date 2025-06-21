@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Search.css";
 
 const Search = ({ getWeatherDetails }) => {
   const [searchText, setSearchText] = useState("Colombo");
@@ -9,7 +10,6 @@ const Search = ({ getWeatherDetails }) => {
   const handleCitySearch = (e) => {
     e.preventDefault();
     if (!searchText.trim()) return;
-
     const API_URL = `${BASE_URL}${searchText}`;
     getWeatherDetails(API_URL);
   };
@@ -20,7 +20,7 @@ const Search = ({ getWeatherDetails }) => {
         const { latitude, longitude } = position.coords;
         const API_URL = `${BASE_URL}${latitude},${longitude}`;
         getWeatherDetails(API_URL);
-        setSearchText(`Home`);
+        setSearchText("Home");
       });
     } else {
       alert("Location access denied.");
@@ -30,18 +30,18 @@ const Search = ({ getWeatherDetails }) => {
   return (
     <div className="search-container">
       <form className="search-form" onSubmit={handleCitySearch}>
-        <span className="material-symbols-outlined">search</span>
+        <span className="material-symbols-outlined search-icon">search</span>
         <input
           type="search"
           className="search-input"
-          placeholder="Search for city..."
+          placeholder="Search for a city..."
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
       </form>
 
       <button className="location-button" onClick={handleLocationClick}>
-        <span className="material-symbols-outlined">home</span>
+        <span className="material-symbols-outlined">my_location</span>
       </button>
     </div>
   );

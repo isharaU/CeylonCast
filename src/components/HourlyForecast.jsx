@@ -1,5 +1,4 @@
-import React from 'react';
-import cloudyIcon from '../assets/cloudy.png';
+import './HourlyForecast.css';
 
 const HourlyForecast = ({ hour }) => {
   return (

@@ -14,10 +14,10 @@ export const useWeather = () => {
 
       const data = await response.json();
       const { currentWeather, hourlyForecast } = parseWeatherData(data);
-      console.log(data);
 
       setCurrentWeather(currentWeather);
       setHourlyForecast(hourlyForecast);
+
     } catch (error) {
       setHasNoResults(true);
       console.error("Error fetching weather data:", error);
