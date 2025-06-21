@@ -5,6 +5,7 @@ export const useWeather = () => {
   const [currentWeather, setCurrentWeather] = useState({});
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [hasNoResults, setHasNoResults] = useState(false);
+  const [otherWeatherData, setOtherWeatherData] = useState({});
 
   const getWeatherDetails = async (API_URL) => {
     setHasNoResults(false);
@@ -13,16 +14,20 @@ export const useWeather = () => {
       if (!response.ok) throw new Error("Network response was not ok");
 
       const data = await response.json();
-      const { currentWeather, hourlyForecast } = parseWeatherData(data);
+      const { currentWeather, hourlyForecast, otherWeatherData } = parseWeatherData(data);
       console.log(data);
 
       setCurrentWeather(currentWeather);
       setHourlyForecast(hourlyForecast);
+      setOtherWeatherData(otherWeatherData);
+
     } catch (error) {
       setHasNoResults(true);
       console.error("Error fetching weather data:", error);
     }
   };
+
+  
 
   useEffect(() => {
     const API_KEY = import.meta.env.VITE_API_KEY;
@@ -30,5 +35,5 @@ export const useWeather = () => {
     getWeatherDetails(defaultURL);
   }, []);
 
-  return { currentWeather, hourlyForecast, getWeatherDetails, hasNoResults };
+  return { currentWeather, hourlyForecast, getWeatherDetails, hasNoResults, otherWeatherData };
 };

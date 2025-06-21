@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import Search from './components/Search';
 import CurrentWeather from './components/CurrentWeather';
 import HourlyForecast from './components/HourlyForecast';
+import OtherWeatherData from './components/OtherWeatherData';
 import { useWeather } from './hooks/useWeather';
 import NoResults from './components/NoResults';
 
 const App = () => {
-  const { currentWeather, hourlyForecast, hasNoResults, getWeatherDetails } = useWeather();
+  const { currentWeather, hourlyForecast, hasNoResults, getWeatherDetails, otherWeatherData } = useWeather();
 
   return (
     <div className="container">
@@ -21,7 +22,7 @@ const App = () => {
         </div>
 
         <div className="other-weather-info">
-          {/* <CurrentWeather weather={currentWeather} /> */}
+          <OtherWeatherData weather={otherWeatherData} />
         </div>
 
         <div className="hourly-forecast-container overflow-x-auto flex space-x-4 p-4">
