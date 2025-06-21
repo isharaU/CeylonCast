@@ -1,3 +1,5 @@
+import './HourlyForecast.css';
+
 const HourlyForecast = ({ hour }) => {
   return (
     <div className="hourly-forecast">
