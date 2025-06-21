@@ -1,3 +1,5 @@
+import './NoResults.css';
+
 const NoResults = () => {
   return (
     <>

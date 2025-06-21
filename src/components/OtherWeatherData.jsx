@@ -1,4 +1,5 @@
 import React from "react";
+import "./OtherWeatherData.css";  
 
 const OtherWeatherData = ({ weather }) => {
   if (!weather) {

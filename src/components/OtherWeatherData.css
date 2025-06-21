@@ -1,0 +1,55 @@
+.other-weather-data {
+  background-color: #f0f8ff;
+  border: 1px solid #d6eaff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  transition: transform 0.2s ease;
+}
+
+.other-weather-data:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.other-weather-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.other-weather-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.other-weather-item:hover {
+  background-color: #e6f3ff;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #0077b6;
+}
+
+.value {
+  font-size: 1.1rem;
+  color: #333;
+}
