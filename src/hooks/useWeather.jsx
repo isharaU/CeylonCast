@@ -5,7 +5,6 @@ export const useWeather = () => {
   const [currentWeather, setCurrentWeather] = useState({});
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [hasNoResults, setHasNoResults] = useState(false);
-  const [otherWeatherData, setOtherWeatherData] = useState({});
 
   const getWeatherDetails = async (API_URL) => {
     setHasNoResults(false);
@@ -14,11 +13,10 @@ export const useWeather = () => {
       if (!response.ok) throw new Error("Network response was not ok");
 
       const data = await response.json();
-      const { currentWeather, hourlyForecast, otherWeatherData } = parseWeatherData(data);
+      const { currentWeather, hourlyForecast } = parseWeatherData(data);
 
       setCurrentWeather(currentWeather);
       setHourlyForecast(hourlyForecast);
-      setOtherWeatherData(otherWeatherData);
 
     } catch (error) {
       setHasNoResults(true);
@@ -26,13 +24,11 @@ export const useWeather = () => {
     }
   };
 
-  
-
   useEffect(() => {
     const API_KEY = import.meta.env.VITE_API_KEY;
     const defaultURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=Colombo`;
     getWeatherDetails(defaultURL);
   }, []);
 
-  return { currentWeather, hourlyForecast, getWeatherDetails, hasNoResults, otherWeatherData };
+  return { currentWeather, hourlyForecast, getWeatherDetails, hasNoResults };
 };

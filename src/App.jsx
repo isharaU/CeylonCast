@@ -7,7 +7,7 @@ import { useWeather } from './hooks/useWeather';
 import NoResults from './components/NoResults';
 
 const App = () => {
-  const { currentWeather, hourlyForecast, hasNoResults, otherWeatherData, getWeatherDetails } = useWeather();
+  const { currentWeather, hourlyForecast, hasNoResults, getWeatherDetails } = useWeather();
 
   return (
     <div className="container">
