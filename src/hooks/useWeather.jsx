@@ -11,6 +11,7 @@ export const useWeather = () => {
     try {
       const response = await fetch(API_URL);
       if (!response.ok) throw new Error("Network response was not ok");
+      console.log(response);
 
       const data = await response.json();
       const { currentWeather, hourlyForecast } = parseWeatherData(data);
