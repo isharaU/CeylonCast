@@ -43,46 +43,34 @@
   font-weight: 500;
 }
 
-/* Tablet and up */
-@media (min-width: 768px) {
+@media (max-width: 480px) {
+  .no-results-wrapper {
+    padding: 1rem;
+  }
+
   .no-results {
-    padding: 2.5rem;
+    padding: 1rem;
   }
 
   .no-results-image {
-    width: 120px;
+    width: 60px;
   }
 
   .no-results-title {
-    font-size: 1.8rem;
-  }
-
-  .no-results-description {
-    font-size: 1.1rem;
-  }
-}
-
-/* Desktop and up */
-@media (min-width: 1024px) {
-  .no-results {
-    padding: 3rem;
-  }
-
-  .no-results-image {
-    width: 140px;
-  }
-
-  .no-results-title {
-    font-size: 2rem;
-  }
-
-  .no-results-description {
     font-size: 1.2rem;
   }
+
+  .no-results-description {
+    font-size: 0.9rem;
+  }
+
 }
 
-/* Mobile phones & small tablets */
-@media (min-width: 480px) {
+@media (min-width: 481px) and (max-width: 767px) {
+  .no-results-wrapper {
+    padding: 1.5rem;
+  }
+
   .no-results {
     padding: 1.5rem;
   }
@@ -96,6 +84,28 @@
   }
 
   .no-results-description {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .no-results-wrapper {
+    padding: 2rem;
+  }
+
+  .no-results {
+    padding: 2rem;
+  }
+
+  .no-results-image {
+    width: 120px;
+  }
+
+  .no-results-title {
+    font-size: 1.8rem;
+  }
+
+  .no-results-description {
+    font-size: 1.1rem;
   }
 }
