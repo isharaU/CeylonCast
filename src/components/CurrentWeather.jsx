@@ -2,7 +2,11 @@ import './CurrentWeather.css';
 
 const CurrentWeather = ({ weather }) => {
   if (!weather) {
-    return <p className="loading-text">Loading current weather...</p>;
+    return (
+      <div className="current-weather-card">
+        <img src="src/assets/spinner.svg" alt="Loading..." />
+      </div>
+    );
   }
 
   return (
