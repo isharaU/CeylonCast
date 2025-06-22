@@ -27,6 +27,11 @@ export const useWeather = () => {
 
   useEffect(() => {
     const API_KEY = import.meta.env.VITE_API_KEY;
+    console.log("API Key:", API_KEY);
+    if (!API_KEY) {
+      console.error("API Key is not defined. Please set the VITE_API_KEY environment variable.");
+      return;
+    }
     const defaultURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=Colombo`;
     getWeatherDetails(defaultURL);
   }, []);

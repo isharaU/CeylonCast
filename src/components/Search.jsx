@@ -19,6 +19,8 @@ const Search = ({ getWeatherDetails }) => {
       navigator.geolocation.getCurrentPosition((position) => {
         const { latitude, longitude } = position.coords;
         const API_URL = `${BASE_URL}${latitude},${longitude}`;
+        console.log(position);
+        console.log(API_URL);
         getWeatherDetails(API_URL);
         setSearchText("my location");
       });
