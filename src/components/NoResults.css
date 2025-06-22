@@ -43,7 +43,7 @@
   font-weight: 500;
 }
 
-/* 🧾 Tablet and up */
+/* Tablet and up */
 @media (min-width: 768px) {
   .no-results {
     padding: 2.5rem;
@@ -62,7 +62,7 @@
   }
 }
 
-/* 🖥️ Desktop and up */
+/* Desktop and up */
 @media (min-width: 1024px) {
   .no-results {
     padding: 3rem;
@@ -78,5 +78,24 @@
 
   .no-results-description {
     font-size: 1.2rem;
+  }
+}
+
+/* Mobile phones & small tablets */
+@media (min-width: 480px) {
+  .no-results {
+    padding: 1.5rem;
+  }
+
+  .no-results-image {
+    width: 80px;
+  }
+
+  .no-results-title {
+    font-size: 1.3rem;
+  }
+
+  .no-results-description {
+    font-size: 0.9rem;
   }
 }
