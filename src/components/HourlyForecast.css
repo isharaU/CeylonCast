@@ -3,10 +3,23 @@
   text-align: center;
 }
 
+.hourly-forecast-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+  width: 100%; /* Ensure container takes full width */
+}
+
+.hourly-forecast-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for a cleaner look */
+}
+
 .hourly-list {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 30%; /* Constrain list to 30% width */
+  flex-wrap: nowrap; /* Prevent wrapping to ensure horizontal scrolling */
   gap: 15px;
   margin-top: 20px;
   align-self: center;
@@ -47,18 +60,6 @@
 .hourly-temp {
   font-size: 1rem;
   font-weight: 500;
-}
-
-.hourly-forecast-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  padding: 1rem;
-  scroll-snap-type: x mandatory;
-}
-
-.hourly-forecast-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for a cleaner look */
 }
 
 @media (max-width: 480px) {
@@ -113,4 +114,4 @@
   .hourly-temp {
     font-size: 1.1rem; /* Standard font size for temperature */
   }
-} 
+}
