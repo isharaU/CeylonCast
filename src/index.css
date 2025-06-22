@@ -93,48 +93,112 @@ p {
 
 /* ----------- RESPONSIVE ------------ */
 
-/* Mobile phones & small tablets */
+/* ----------- SMALL SCREENS: Mobile First ------------ */
 @media (max-width: 480px) {
-  body {
-    padding: 20px 10px;
-    align-items: center;
-  }
-
-  .container {
-    padding: 20px 15px;
-    max-width: 100%;
-    border-radius: 15px;
+  .app-title {
+    font-size: 2.2rem;
+    text-align: center;
+    line-height: 1.2;
+    word-break: break-word;
   }
 
   .logo-icon img {
-    height: 3.5rem;
+    height: 3.2rem;
   }
 
-  .app-title {
-    font-size: 3.5rem;
-    letter-spacing: 0.5px;
+  .container {
+    padding: 1rem;
+    border-radius: 12px;
+    width: 100%;
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hourly-forecast-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .weather-container,
+  .other-weather-info {
+    margin-bottom: 1.5rem;
   }
 }
 
-/* Medium tablets */
+/* ----------- MEDIUM SCREENS ------------ */
 @media (min-width: 481px) and (max-width: 767px) {
-  body {
-    padding: 30px 15px;
-    align-items: center;
-  }
-
-  .container {
-    padding: 30px 20px;
-    max-width: 95%;
+  .app-title {
+    font-size: 3rem;
+    line-height: 1.2;
   }
 
   .logo-icon img {
-    height: 4.5rem;
+    height: 4rem;
   }
 
-  .app-title {
-    font-size: 4.8rem;
+  .container {
+    padding: 1.8rem;
+    border-radius: 16px;
+    width: 100%;
+  }
+
+  body {
+    padding: 1.5rem;
+  }
+
+  .app-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hourly-forecast-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .weather-container,
+  .other-weather-info {
+    margin-bottom: 2rem;
   }
 }
 
-/* Larger screens keep the original styles */
+/* ----------- LARGE SCREENS ------------ */
+@media (min-width: 768px) {
+  .app-title {
+    font-size: 4rem;
+  }
+
+  .logo-icon img {
+    height: 5rem;
+  }
+
+  .container {
+    padding: 2.5rem;
+  }
+
+  body {
+    padding: 2rem;
+  }
+
+  .app-header {
+    gap: 1.5rem;
+  }
+
+  .hourly-forecast-container {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+}

@@ -54,48 +54,76 @@
   color: #333;
 }
 
-/* 📱 Tablet & Up */
-@media (min-width: 768px) {
+@media (max-width: 480px) {
   .other-weather-data {
-    padding: 2rem;
-    max-width: 90%;
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 30%;
   }
 
   .other-weather-list {
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
   }
 
   .other-weather-item {
-    padding: 14px;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .label {
+    font-size: 0.95rem;
+  }
+
+  .value {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .other-weather-data {
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 50%;
+  }
+
+  .other-weather-list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+  }
+
+  .other-weather-item {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .value {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .other-weather-data {
+    padding: 1.75rem;
+    margin: 2rem auto;
+  }
+
+  .other-weather-list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  .other-weather-item {
+    font-size: 1rem;
+    padding: 12px;
   }
 
   .label {
     font-size: 1.05rem;
-  }
-
-  .value {
-    font-size: 1.15rem;
-  }
-}
-
-/* 🖥️ Desktop & Up */
-@media (min-width: 1024px) {
-  .other-weather-data {
-    padding: 2.5rem;
-    max-width: 80%;
-  }
-
-  .other-weather-list {
-    gap: 20px;
-  }
-
-  .other-weather-item {
-    padding: 16px;
-  }
-
-  .label {
-    font-size: 1.1rem;
   }
 
   .value {

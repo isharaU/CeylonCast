@@ -62,47 +62,68 @@
   font-style: italic;
 }
 
-/* 📱 Tablet and up */
-@media (min-width: 768px) {
+@media (max-width: 480px) {
   .current-weather-card {
-    padding: 3rem;
+    padding: 1.5rem;
   }
 
   .weather-icon {
-    width: 100px;
+    width: 60px;
   }
 
   .temperature {
-    font-size: 3.2rem;
+    font-size: 2rem;
   }
 
   .weather-description {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .location {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 481px) and (max-width: 767px) {
   .current-weather-card {
-    padding: 4rem;
+    padding: 1.8rem;
   }
 
   .weather-icon {
-    width: 120px;
+    width: 70px;
   }
 
   .temperature {
-    font-size: 3.5rem;
+    font-size: 2.2rem;
   }
 
   .weather-description {
-    font-size: 1.4rem;
+    font-size: 1.05rem;
   }
 
   .location {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .current-weather-card {
+    padding: 2rem;
+  }
+
+  .weather-icon {
+    width: 80px;
+  }
+
+  .temperature {
+    font-size: 2.5rem;
+  }
+
+  .weather-description {
+    font-size: 1.1rem;
+  }
+
+  .location {
+    font-size: 0.95rem;
   }
 }

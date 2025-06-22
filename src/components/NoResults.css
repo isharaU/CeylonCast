@@ -43,10 +43,58 @@
   font-weight: 500;
 }
 
-/* 🧾 Tablet and up */
-@media (min-width: 768px) {
+@media (max-width: 480px) {
+  .no-results-wrapper {
+    padding: 1rem;
+  }
+
   .no-results {
-    padding: 2.5rem;
+    padding: 1rem;
+  }
+
+  .no-results-image {
+    width: 60px;
+  }
+
+  .no-results-title {
+    font-size: 1.2rem;
+  }
+
+  .no-results-description {
+    font-size: 0.9rem;
+  }
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .no-results-wrapper {
+    padding: 1.5rem;
+  }
+
+  .no-results {
+    padding: 1.5rem;
+  }
+
+  .no-results-image {
+    width: 80px;
+  }
+
+  .no-results-title {
+    font-size: 1.3rem;
+  }
+
+  .no-results-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .no-results-wrapper {
+    padding: 2rem;
+  }
+
+  .no-results {
+    padding: 2rem;
   }
 
   .no-results-image {
@@ -59,24 +107,5 @@
 
   .no-results-description {
     font-size: 1.1rem;
-  }
-}
-
-/* 🖥️ Desktop and up */
-@media (min-width: 1024px) {
-  .no-results {
-    padding: 3rem;
-  }
-
-  .no-results-image {
-    width: 140px;
-  }
-
-  .no-results-title {
-    font-size: 2rem;
-  }
-
-  .no-results-description {
-    font-size: 1.2rem;
   }
 }
