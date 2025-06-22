@@ -4,7 +4,7 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 30px;
-  flex-wrap: wrap; /* 🌟 Makes it stack on small screens */
+  flex-wrap: wrap; 
 }
 
 .search-form {
@@ -68,38 +68,104 @@
   font-size: 18px;
 }
 
-/* 📱 Phones */
 @media (max-width: 480px) {
+  .search-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .search-form {
+    width: 30%;
+    max-width: 400px;
+    padding: 12px;
+  }
+
   .search-input {
-    width: 140px;
-    font-size: 0.95rem;
+    width: 100%;
   }
 
   .location-button {
-    padding: 9px 10px;
+    width: 40px;
+    height: 40px;
   }
-
+  .search-icon {
+    font-size: 18px;
+  }
   .material-symbols-outlined {
     font-size: 16px;
   }
+  .search-input::placeholder {
+    font-size: 0.9rem;
+  }
 }
 
-/* 🖥️ Desktops & up */
-@media (min-width: 1024px) {
-  .search-input {
-    width: 240px;
-    font-size: 1.05rem;
+@media (min-width: 481px) and (max-width: 767px) {
+  .search-container {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
   }
 
-  .search-icon {
-    font-size: 24px;
+  .search-form {
+    width: 30%;
+    max-width: 500px;
+    padding: 12px;
+  }
+
+  .search-input {
+    width: 100%;
   }
 
   .location-button {
-    padding: 14px 16px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .search-icon {
+    font-size: 20px;
+  }
+  
+  .material-symbols-outlined {
+    font-size: 18px;
+  }
+  .search-input::placeholder {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-container {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
   }
 
+  .search-form {
+    width: 25%;
+    max-width: 600px;
+    padding: 14px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .location-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .search-icon {
+    font-size: 22px;
+  }
+  
   .material-symbols-outlined {
     font-size: 20px;
   }
+  
+  .search-input::placeholder {
+    font-size: 1.1rem;
+  } 
 }
+
