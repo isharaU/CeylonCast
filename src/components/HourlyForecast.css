@@ -16,12 +16,15 @@
   background-color: #f0f8ff;
   border-radius: 10px;
   padding: 15px;
-  width: 100px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s ease;
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 100px;
+  text-align: center;
 }
 
 .hourly-item:hover {
@@ -30,7 +33,7 @@
 }
 
 .hourly-icon {
-  width: 40px;
+  width: 36px;
   height: auto;
   margin: 8px 0;
 }
@@ -38,10 +41,11 @@
 .hour {
   font-weight: 600;
   margin-bottom: 5px;
+  font-size: 0.9rem;
 }
 
 .hourly-temp {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -57,10 +61,42 @@
   display: none; /* Hide scrollbar for a cleaner look */
 }
 
-.hourly-item {
-  scroll-snap-align: start;
-  flex: 0 0 auto; /* Prevents items from shrinking */
-  width: 120px; /* Fixed width for each item */
-  text-align: center;
-  transition: transform 0.2s ease;
+/* 🔁 Tablet and up */
+@media (min-width: 768px) {
+  .hourly-item {
+    width: 110px;
+    padding: 16px;
+  }
+
+  .hourly-icon {
+    width: 44px;
+  }
+
+  .hour {
+    font-size: 1rem;
+  }
+
+  .hourly-temp {
+    font-size: 1.1rem;
+  }
+}
+
+/* 💻 Desktop and up */
+@media (min-width: 1024px) {
+  .hourly-item {
+    width: 120px;
+    padding: 18px;
+  }
+
+  .hourly-icon {
+    width: 50px;
+  }
+
+  .hour {
+    font-size: 1.05rem;
+  }
+
+  .hourly-temp {
+    font-size: 1.2rem;
+  }
 }
