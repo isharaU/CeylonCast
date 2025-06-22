@@ -2,9 +2,12 @@ import React from "react";
 import "./OtherWeatherData.css";  
 
 const OtherWeatherData = ({ weather }) => {
-  if (!weather) {
-    console.log("Weather data is not available yet.");
-    return <div>Loading...</div>;
+  if (!weather) {;
+    return (
+      <div className="other-weather-data">
+        <img src="src/assets/list_load.svg" alt="Loading..." />
+      </div>
+    );
   }
 
   return (

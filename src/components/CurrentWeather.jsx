@@ -1,8 +1,26 @@
 import './CurrentWeather.css';
+import { useEffect, useState } from 'react';
 
 const CurrentWeather = ({ weather }) => {
-  if (!weather) {
-    return <p className="loading-text">Loading current weather...</p>;
+  const [showLoading, setShowLoading] = useState(!weather);
+
+  useEffect(() => {
+    if (weather) {
+      setShowLoading(true);
+      const timer = setTimeout(() => {
+        setShowLoading(false);
+      }, 400); // 400ms delay
+
+      return () => clearTimeout(timer);
+    }
+  }, [weather]);
+
+  if (showLoading) {
+    return (
+      <div className="current-weather-card">
+        <img src="src/assets/spinner.svg" alt="Loading..." />
+      </div>
+    );
   }
 
   return (
