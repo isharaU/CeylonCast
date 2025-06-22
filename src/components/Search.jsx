@@ -11,6 +11,7 @@ const Search = ({ getWeatherDetails }) => {
     e.preventDefault();
     if (!searchText.trim()) return;
     const API_URL = `${BASE_URL}${searchText}`;
+    console.log("City search API URL:", API_URL);
     getWeatherDetails(API_URL);
   };
 
@@ -19,8 +20,7 @@ const Search = ({ getWeatherDetails }) => {
       navigator.geolocation.getCurrentPosition((position) => {
         const { latitude, longitude } = position.coords;
         const API_URL = `${BASE_URL}${latitude},${longitude}`;
-        console.log(position);
-        console.log(API_URL);
+        console.log("Location API URL:", API_URL);
         getWeatherDetails(API_URL);
         setSearchText("my location");
       });
