@@ -13,7 +13,7 @@ CeylonCast is a modern weather forecast web application built with React. It all
 
 ## Screenshots
 
-![CeylonCast Screenshot](public\ceyloanCast_ss.png) 
+![CeylonCast Screenshot](./public/ceyloanCast_ss.png) 
 
 ## Getting Started
 
