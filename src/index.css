@@ -117,9 +117,24 @@ p {
   }
 
   .app-header {
-    flex-direction: column;
+    flex-direction: row; /* Changed from column to row */
     align-items: center;
+    justify-content: center; /* Center the content horizontally */
     gap: 0.5rem;
+    flex-wrap: nowrap; /* Prevent wrapping to new line */
+  }
+
+  /* Optional: Reduce title font size if needed for better fit */
+  .app-title {
+    font-size: 1.8rem; /* Reduced from 2.2rem if space is tight */
+    text-align: center;
+    line-height: 1.2;
+    word-break: break-word;
+    flex-shrink: 1; /* Allow title to shrink if needed */
+  }
+
+  .logo-icon {
+    flex-shrink: 0; /* Prevent icon from shrinking */
   }
 
   .hourly-forecast-container {
@@ -134,7 +149,6 @@ p {
     margin-bottom: 1.5rem;
   }
 }
-
 /* ----------- MEDIUM SCREENS ------------ */
 @media (min-width: 481px) and (max-width: 767px) {
   .app-title {
