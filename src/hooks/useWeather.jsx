@@ -32,7 +32,7 @@ export const useWeather = () => {
       console.error("API Key is not defined. Please set the VITE_API_KEY environment variable.");
       return;
     }
-    const defaultURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=Colombo`;
+    const defaultURL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=Colombo`;
     getWeatherDetails(defaultURL);
   }, []);
 
