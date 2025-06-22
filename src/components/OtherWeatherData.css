@@ -54,7 +54,7 @@
   color: #333;
 }
 
-/* 📱 Tablet & Up */
+/* Tablet & Up */
 @media (min-width: 768px) {
   .other-weather-data {
     padding: 2rem;
@@ -79,7 +79,7 @@
   }
 }
 
-/* 🖥️ Desktop & Up */
+/* Desktop & Up */
 @media (min-width: 1024px) {
   .other-weather-data {
     padding: 2.5rem;
@@ -100,5 +100,46 @@
 
   .value {
     font-size: 1.2rem;
+  }
+}
+
+/* Mobile Phones & Small Tablets */
+@media (min-width: 480px) {
+  .other-weather-data {
+    padding: 1rem;
+    max-width: 40%;
+  }
+
+  .other-weather-list {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+  }
+
+  .other-weather-item {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .label {
+    font-size: 0.95rem;
+  }
+
+  .value {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .other-weather-data {
+    padding: 0.75rem;
+    max-width: 40%;
+  }
+
+  .label {
+    font-size: 0.95rem;
+  }
+
+  .value {
+    font-size: 1rem;
   }
 }
