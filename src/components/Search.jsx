@@ -20,7 +20,7 @@ const Search = ({ getWeatherDetails }) => {
         const { latitude, longitude } = position.coords;
         const API_URL = `${BASE_URL}${latitude},${longitude}`;
         getWeatherDetails(API_URL);
-        setSearchText("Home");
+        setSearchText("my location");
       });
     } else {
       alert("Location access denied.");
