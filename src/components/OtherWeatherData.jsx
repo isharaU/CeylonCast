@@ -5,7 +5,7 @@ const OtherWeatherData = ({ weather }) => {
   if (!weather) {;
     return (
       <div className="other-weather-data">
-        <img src="src/assets/list_load.svg" alt="Loading..." />
+        <img src="/public/list_load.svg" alt="Loading..." />
       </div>
     );
   }

@@ -18,7 +18,7 @@ const CurrentWeather = ({ weather }) => {
   if (showLoading) {
     return (
       <div className="current-weather-card">
-        <img src="src/assets/spinner.svg" alt="Loading..." />
+        <img src="/public/spinner.svg" alt="Loading..." />
       </div>
     );
   }
