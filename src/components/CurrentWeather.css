@@ -1,20 +1,20 @@
 .current-weather-card {
-  padding: 2.5rem;
+  padding: 2rem;
   text-align: center;
   margin-bottom: 2.5rem;
-  border: none; 
-  border-radius: 0; 
+  border: none;
+  border-radius: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 .current-weather-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 119, 182, 0.08); 
+  box-shadow: 0 12px 24px rgba(0, 119, 182, 0.08);
 }
 
 .weather-icon {
-  width: 120px;
+  width: 80px;
   height: auto;
   margin-bottom: 1.5rem;
   filter: drop-shadow(0 4px 8px rgba(0, 119, 182, 0.2));
@@ -33,7 +33,7 @@
 }
 
 .temperature {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #023e8a;
   margin: 0.5rem 0;
@@ -41,7 +41,7 @@
 }
 
 .weather-description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #333;
   margin-bottom: 0.1rem;
@@ -49,7 +49,7 @@
 }
 
 .location {
-  font-size: 1.0rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #555;
   letter-spacing: 0.6px;
@@ -57,7 +57,52 @@
 
 .loading-text {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #999;
   font-style: italic;
+}
+
+/* 📱 Tablet and up */
+@media (min-width: 768px) {
+  .current-weather-card {
+    padding: 3rem;
+  }
+
+  .weather-icon {
+    width: 100px;
+  }
+
+  .temperature {
+    font-size: 3.2rem;
+  }
+
+  .weather-description {
+    font-size: 1.3rem;
+  }
+
+  .location {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .current-weather-card {
+    padding: 4rem;
+  }
+
+  .weather-icon {
+    width: 120px;
+  }
+
+  .temperature {
+    font-size: 3.5rem;
+  }
+
+  .weather-description {
+    font-size: 1.4rem;
+  }
+
+  .location {
+    font-size: 1.2rem;
+  }
 }
