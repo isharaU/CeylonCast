@@ -18,7 +18,7 @@
 }
 
 .no-results-image {
-  width: 120px;
+  width: 100px;
   height: auto;
   margin-bottom: 20px;
   opacity: 0.85;
@@ -30,15 +30,53 @@
 }
 
 .no-results-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #0077b6;
   margin-bottom: 10px;
 }
 
 .no-results-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #555;
   line-height: 1.6;
   font-weight: 500;
+}
+
+/* 🧾 Tablet and up */
+@media (min-width: 768px) {
+  .no-results {
+    padding: 2.5rem;
+  }
+
+  .no-results-image {
+    width: 120px;
+  }
+
+  .no-results-title {
+    font-size: 1.8rem;
+  }
+
+  .no-results-description {
+    font-size: 1.1rem;
+  }
+}
+
+/* 🖥️ Desktop and up */
+@media (min-width: 1024px) {
+  .no-results {
+    padding: 3rem;
+  }
+
+  .no-results-image {
+    width: 140px;
+  }
+
+  .no-results-title {
+    font-size: 2rem;
+  }
+
+  .no-results-description {
+    font-size: 1.2rem;
+  }
 }
