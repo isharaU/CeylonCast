@@ -11,7 +11,6 @@ export const useWeather = () => {
     try {
       const response = await fetch(API_URL);
       if (!response.ok) throw new Error("Network response was not ok");
-      console.log(response);
 
       const data = await response.json();
       const { currentWeather, hourlyForecast } = parseWeatherData(data);
@@ -27,7 +26,6 @@ export const useWeather = () => {
 
   useEffect(() => {
     const API_KEY = import.meta.env.VITE_API_KEY;
-    console.log("API Key:", API_KEY);
     if (!API_KEY) {
       console.error("API Key is not defined. Please set the VITE_API_KEY environment variable.");
       return;
