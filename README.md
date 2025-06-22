@@ -13,7 +13,8 @@ CeylonCast is a modern weather forecast web application built with React. It all
 
 ## Screenshots
 
-![CeylonCast Screenshot](./src/assets/cloudy.png) 
+<img src="./public/ceyloanCast_ss.png" alt="CeylonCast Screenshot" style="width: 300px;" />
+ 
 
 ## Getting Started
 
@@ -83,8 +84,8 @@ npm run build
 
 ## License
 
-This project is still not licensed, but will be licensed under the MIT License.
+This project is MIT Licensed.
 
 ---
 
-**Made with ❤️ for weather
+
