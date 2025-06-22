@@ -62,7 +62,7 @@
   font-style: italic;
 }
 
-/* 📱 Tablet and up */
+/* Tablet and up */
 @media (min-width: 768px) {
   .current-weather-card {
     padding: 3rem;
@@ -85,6 +85,7 @@
   }
 }
 
+/* Desktop and up */
 @media (min-width: 1024px) {
   .current-weather-card {
     padding: 4rem;
@@ -107,6 +108,7 @@
   }
 }
 
+/* Mobile phones & small tablets */
 @media (min-width: 480px) {
   .current-weather-card {
     padding: 1.5rem;
