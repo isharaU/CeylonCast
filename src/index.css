@@ -95,24 +95,17 @@ p {
 
 /* Mobile phones & small tablets */
 @media (max-width: 480px) {
-  body {
-    padding: 20px 10px;
-    align-items: center;
-  }
-
-  .container {
-    padding: 20px 15px;
-    max-width: 100%;
-    border-radius: 15px;
+  .app-header {
+    margin-bottom: 30px;
   }
 
   .logo-icon img {
-    height: 3.5rem;
+    height: 4rem;
   }
 
   .app-title {
-    font-size: 3.5rem;
-    letter-spacing: 0.5px;
+    font-size: 2.5rem;
+    letter-spacing: 0.8px;
   }
 }
 
@@ -133,8 +126,10 @@ p {
   }
 
   .app-title {
-    font-size: 4.8rem;
+    font-size: 2.8rem;
   }
 }
 
 /* Larger screens keep the original styles */
+
+
