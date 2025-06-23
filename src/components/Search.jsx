@@ -6,6 +6,7 @@ const Search = ({ getWeatherDetails }) => {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [activeSuggestion, setActiveSuggestion] = useState(-1);
+  const [isTyping, setIsTyping] = useState(false);
   const suggestionRefs = useRef([]);
   const searchInputRef = useRef(null);
 
@@ -34,7 +35,7 @@ const Search = ({ getWeatherDetails }) => {
       const response = await fetch(`${SEARCH_URL}${encodeURIComponent(query)}`);
       const data = await response.json();
       setSuggestions(data || []);
-      setShowSuggestions(true);
+      setShowSuggestions(isTyping && data && data.length > 0);
       setActiveSuggestion(-1);
     } catch (error) {
       console.error("Error fetching suggestions:", error);
@@ -48,7 +49,7 @@ const Search = ({ getWeatherDetails }) => {
 
   useEffect(() => {
     debouncedFetchSuggestions(searchText);
-  }, [searchText]);
+  }, [searchText, isTyping]);
 
   const handleCitySearch = (e) => {
     e.preventDefault();
@@ -56,6 +57,7 @@ const Search = ({ getWeatherDetails }) => {
     const API_URL = `${BASE_URL}${searchText}`;
     getWeatherDetails(API_URL);
     setShowSuggestions(false);
+    setIsTyping(false);
   };
 
   const handleLocationClick = () => {
@@ -66,6 +68,7 @@ const Search = ({ getWeatherDetails }) => {
         getWeatherDetails(API_URL);
         setSearchText("my location");
         setShowSuggestions(false);
+        setIsTyping(false);
       });
     } else {
       alert("Location access denied.");
@@ -77,16 +80,19 @@ const Search = ({ getWeatherDetails }) => {
     const API_URL = `${BASE_URL}${searchText}`;
     getWeatherDetails(API_URL);
     setShowSuggestions(false);
+    setIsTyping(false);
   };
 
   const handleInputChange = (e) => {
     setSearchText(e.target.value);
+    setIsTyping(true);
   };
 
   const handleSuggestionClick = (suggestion) => {
     const locationName = `${suggestion.name}, ${suggestion.country}`;
     setSearchText(locationName);
     setShowSuggestions(false);
+    setIsTyping(false);
     const API_URL = `${BASE_URL}${locationName}`;
     getWeatherDetails(API_URL);
   };
@@ -118,23 +124,25 @@ const Search = ({ getWeatherDetails }) => {
       case "Escape":
         setShowSuggestions(false);
         setActiveSuggestion(-1);
+        setIsTyping(false);
         searchInputRef.current?.blur();
         break;
+      default:
+        // For any other key, set typing to true
+        setIsTyping(true);
     }
   };
 
   const handleInputBlur = (e) => {
-    // Delay hiding suggestions to allow for suggestion clicks
-    setTimeout(() => {
-      setShowSuggestions(false);
-      setActiveSuggestion(-1);
-    }, 150);
+    // Hide suggestions immediately when input loses focus
+    setShowSuggestions(false);
+    setActiveSuggestion(-1);
+    setIsTyping(false);
   };
 
   const handleInputFocus = () => {
-    if (suggestions.length > 0 && searchText.length >= 2) {
-      setShowSuggestions(true);
-    }
+    // Don't show suggestions on focus, only when typing
+    setIsTyping(false);
   };
 
   return (
