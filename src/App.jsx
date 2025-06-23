@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="container">
       <div className="app-header">
-        <span className="logo-icon"><img src="/images/cloudy.png" alt="CeylonCast Logo" /></span>
+        <span className="logo-icon"><img src="/images/cloudy.svg" alt="CeylonCast Logo" /></span>
         <h1 className="app-title">CeylonCast</h1>
     </div>
 
