@@ -27,6 +27,12 @@ const Search = ({ getWeatherDetails }) => {
     }
   };
 
+  const handleSearchClick = () => {
+    if (!searchText.trim()) return;
+    const API_URL = `${BASE_URL}${searchText}`;
+    getWeatherDetails(API_URL);
+  };
+
   return (
     <div className="search-container">
       <form className="search-form" onSubmit={handleCitySearch}>
@@ -40,6 +46,9 @@ const Search = ({ getWeatherDetails }) => {
         />
       </form>
 
+      <button className="location-button" onClick={handleSearchClick}>
+        <span className="material-symbols-outlined">search</span>
+      </button>
       <button className="location-button" onClick={handleLocationClick}>
         <span className="material-symbols-outlined">my_location</span>
       </button>
