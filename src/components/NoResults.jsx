@@ -11,7 +11,7 @@ const NoResults = () => {
         />
         <h2 className="no-results-title">No results found</h2>
         <p className="no-results-description">
-          Please try searching for a different city!.
+          Please try searching for a different city
         </p>
       </div>
     </div>
