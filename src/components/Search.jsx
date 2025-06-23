@@ -149,7 +149,7 @@ const Search = ({ getWeatherDetails }) => {
     <div className="search-container">
       <div className="search-wrapper">
         <form className="search-form" onSubmit={handleCitySearch}>
-          <span className="material-symbols-outlined search-icon">search</span>
+          <span className="material-symbols-outlined search-icon">globe</span>
           <input
             ref={searchInputRef}
             type="search"
