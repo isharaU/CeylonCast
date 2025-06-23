@@ -1,55 +1,61 @@
 # CeylonCast
 
-CeylonCast is a modern weather forecast web application built with React. It allows users to search for weather information by city or by their current location, and provides current weather details along with an interactive, horizontally scrollable forecast.
+CeylonCast is a modern, responsive weather forecast web application built with React and powered by the [WeatherAPI.com](https://www.weatherapi.com/). It allows users to search the weather by city or current location, provides auto-suggestions while typing, and displays current conditions along with a beautifully scrollable 24-hour forecast.
 
 ## Features
 
-- **City Search:** Search for weather by entering a city name.
-- **Location Weather:** Get weather for your current location using geolocation.
-- **Current Weather:** Displays temperature, weather condition, and location.
-- **24-Hour Forecast:** Horizontally scrollable hourly forecast for the next 24 hours.
-- **Responsive Design:** Clean, modern UI that works on desktop and mobile.
-- **No Results Handling:** Friendly message and image if no results are found.
+* **🔍 City Search:** Instantly search for weather by typing a city name.
+* **✨ Auto-Suggestions:** Get real-time city name suggestions while typing.
+* **📍 Location Weather:** Get weather for your current location using geolocation.
+* **🌤️ Current Weather:** Displays temperature, weather condition, and location.
+* **🕐 24-Hour Forecast:** Smooth horizontally scrollable forecast for the next 24 hours.
+* **📱 Responsive Design:** Clean, modern UI optimized for desktop and mobile.
+* **🚫 No Results Handling:** Friendly message and image if no results are found.
 
 ## Screenshots
 
 <img src="./public/ceyloanCast_ss.png" alt="CeylonCast Screenshot" style="width: 300px;" />
- 
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v16 or higher recommended)
-- [npm](https://www.npmjs.com/) 
+* [Node.js](https://nodejs.org/) (v16 or higher recommended)
+* [npm](https://www.npmjs.com/)
 
 ### Installation
 
 1. **Clone the repository:**
+
    ```sh
-   https://github.com/isharaU/CeylonCast.git
-   cd ceyloncast
+   git clone https://github.com/isharaU/CeylonCast.git
+   cd CeylonCast
    ```
 
 2. **Install dependencies:**
+
    ```sh
    npm install
    ```
 
 3. **Set up your WeatherAPI key:**
-   - Create a `.env` file in the root directory.
-   - Add your API key:
+
+   * Create a `.env` file in the root directory.
+   * Add your API key:
+
      ```
      VITE_API_KEY=your_weatherapi_key_here
      ```
-   - You can get a free API key from [WeatherAPI.com](https://www.weatherapi.com/).
+   * Get your free API key from [WeatherAPI.com](https://www.weatherapi.com/).
 
 4. **Start the development server:**
+
    ```sh
    npm run dev
    ```
 
 5. **Open your browser and visit:**
+
    ```
    http://localhost:5173
    ```
@@ -58,33 +64,38 @@ CeylonCast is a modern weather forecast web application built with React. It all
 
 ```
 src/
-  assets/            # Images and icons
   components/        # React components (Search, CurrentWeather, HourlyForecast, NoResults)
-  hooks/             # Custom React hooks (useWeather)
-  utils/             # Utility functions (weatherService)
-  index.css          # Main stylesheet
-  App.jsx            # Main app component
+  hooks/             # Custom hooks (useWeather)
+  utils/             # API and helper functions (weatherService)
+  index.css          # Global styles
+  App.jsx            # Main component
   main.jsx           # Entry point
 public/
-  index.html         # HTML template
+  index.html         # Root HTML
 ```
 
 ## Customization
 
-- **Styling:** All styles are in `src/index.css`. You can adjust colors, fonts, and layout as needed.
-- **Icons:** Weather icons are stored in `src/assets/`. You can replace them with your own.
+* **Styling:** All styles are in `src/index.css`. Easily tweak fonts, colors, and layout.
+* **Icons:** Default icons are in `public/images/`, feel free to replace them.
 
 ## Deployment
 
-You can deploy this app to any static hosting service (Vercel, Netlify, GitHub Pages, etc.) after building:
+CeylonCast is deployed live on [Vercel](https://vercel.com/), which offers blazing-fast load speeds and smooth hosting.
+
+To build for production:
 
 ```sh
 npm run build
 ```
 
+## Acknowledgements
+
+* Thanks to [WeatherAPI.com](https://www.weatherapi.com/) for providing a powerful and free weather API! 💙
+
 ## License
 
-This project is MIT Licensed.
+This project is licensed under the MIT License.
 
 ---
 
