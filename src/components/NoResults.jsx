@@ -5,7 +5,7 @@ const NoResults = () => {
     <div className="no-results-wrapper">
       <div className="no-results">
         <img
-          src="/images/close.png"
+          src="/images/close.svg"
           alt="No results found"
           className="no-results-image"
         />

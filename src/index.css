@@ -11,7 +11,10 @@
 }
 
 body {
-  background: linear-gradient(to bottom right, #eaf4ff, #ffffff);
+  /* background: linear-gradient(to bottom right, #eaf4ff, #ffffff); */
+  background-image: url("images/background.svg");
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -21,7 +24,7 @@ body {
 }
 
 .container {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.6);
   width: 100%;
   max-width: clamp(320px, 90vw, 860px);
   padding: 2rem 1.5rem;
