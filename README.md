@@ -1,6 +1,6 @@
 # CeylonCast
 
-CeylonCast is a modern, responsive weather forecast web application built with React and powered by the [WeatherAPI.com](https://www.weatherapi.com/). It allows users to search the weather by city or current location, provides auto-suggestions while typing, and displays current conditions along with a beautifully scrollable 24-hour forecast.
+CeylonCast is a modern, responsive weather forecast web application built with React and powered by the [WeatherAPI.com](https://www.weatherapi.com/). It allows users to search the weather by city or current location, provides auto-suggestions while typing, and displays current conditions along with a scrollable 24-hour forecast.
 
 ## Features
 
@@ -64,9 +64,9 @@ CeylonCast is a modern, responsive weather forecast web application built with R
 
 ```
 src/
-  components/        # React components (Search, CurrentWeather, HourlyForecast, NoResults)
-  hooks/             # Custom hooks (useWeather)
-  utils/             # API and helper functions (weatherService)
+  components/        # React components 
+  hooks/             # Custom hooks 
+  utils/             # API and helper functions 
   index.css          # Global styles
   App.jsx            # Main component
   main.jsx           # Entry point
@@ -76,13 +76,12 @@ public/
 
 ## Customization
 
-* **Styling:** All styles are in `src/index.css`. Easily tweak fonts, colors, and layout.
+* **Styling:** All styles are in `src/..css`. Easily tweak fonts, colors, and layout.
 * **Icons:** Default icons are in `public/images/`, feel free to replace them.
 
 ## Deployment
 
-CeylonCast is deployed live on [Vercel](https://vercel.com/), which offers blazing-fast load speeds and smooth hosting.
-
+CeylonCast is deployed live on [Vercel](https://ceylon-cast.vercel.app/).
 To build for production:
 
 ```sh
@@ -97,6 +96,5 @@ npm run build
 
 This project is licensed under the MIT License.
 
----
 
 
